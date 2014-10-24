@@ -41,7 +41,6 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.uartBox = new System.Windows.Forms.GroupBox();
             this.disconnectButton = new System.Windows.Forms.Button();
-            this.managerButton = new System.Windows.Forms.Button();
             this.cpuBox = new System.Windows.Forms.GroupBox();
             this.checkBox = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,9 +63,9 @@
             // 
             this.connectButton.Enabled = false;
             this.connectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.connectButton.Location = new System.Drawing.Point(6, 139);
+            this.connectButton.Location = new System.Drawing.Point(10, 81);
             this.connectButton.Name = "connectButton";
-            this.connectButton.Size = new System.Drawing.Size(244, 43);
+            this.connectButton.Size = new System.Drawing.Size(244, 58);
             this.connectButton.TabIndex = 0;
             this.connectButton.Text = "Verbinde";
             this.connectButton.UseVisualStyleBackColor = true;
@@ -74,7 +73,6 @@
             // 
             // portPicker
             // 
-            this.portPicker.DropDownWidth = 200;
             this.portPicker.FormattingEnabled = true;
             this.portPicker.ItemHeight = 13;
             this.portPicker.Location = new System.Drawing.Point(100, 15);
@@ -140,7 +138,6 @@
             // uartBox
             // 
             this.uartBox.Controls.Add(this.disconnectButton);
-            this.uartBox.Controls.Add(this.managerButton);
             this.uartBox.Controls.Add(this.label1);
             this.uartBox.Controls.Add(this.connectButton);
             this.uartBox.Controls.Add(this.baudPicker);
@@ -148,7 +145,7 @@
             this.uartBox.Controls.Add(this.portPicker);
             this.uartBox.Location = new System.Drawing.Point(12, 12);
             this.uartBox.Name = "uartBox";
-            this.uartBox.Size = new System.Drawing.Size(260, 239);
+            this.uartBox.Size = new System.Drawing.Size(260, 214);
             this.uartBox.TabIndex = 5;
             this.uartBox.TabStop = false;
             this.uartBox.Text = "UART";
@@ -157,24 +154,13 @@
             // 
             this.disconnectButton.Enabled = false;
             this.disconnectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.disconnectButton.Location = new System.Drawing.Point(6, 188);
+            this.disconnectButton.Location = new System.Drawing.Point(10, 145);
             this.disconnectButton.Name = "disconnectButton";
-            this.disconnectButton.Size = new System.Drawing.Size(244, 43);
+            this.disconnectButton.Size = new System.Drawing.Size(244, 60);
             this.disconnectButton.TabIndex = 6;
             this.disconnectButton.Text = "Trennen";
             this.disconnectButton.UseVisualStyleBackColor = true;
             this.disconnectButton.Click += new System.EventHandler(this.disconnectButton_Click);
-            // 
-            // managerButton
-            // 
-            this.managerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.managerButton.Location = new System.Drawing.Point(6, 93);
-            this.managerButton.Name = "managerButton";
-            this.managerButton.Size = new System.Drawing.Size(244, 40);
-            this.managerButton.TabIndex = 5;
-            this.managerButton.Text = "Geräte Manager";
-            this.managerButton.UseVisualStyleBackColor = true;
-            this.managerButton.Click += new System.EventHandler(this.managerButton_Click);
             // 
             // cpuBox
             // 
@@ -184,7 +170,7 @@
             this.cpuBox.Controls.Add(this.chart);
             this.cpuBox.Location = new System.Drawing.Point(279, 12);
             this.cpuBox.Name = "cpuBox";
-            this.cpuBox.Size = new System.Drawing.Size(341, 239);
+            this.cpuBox.Size = new System.Drawing.Size(341, 214);
             this.cpuBox.TabIndex = 6;
             this.cpuBox.TabStop = false;
             this.cpuBox.Text = "CPU";
@@ -195,7 +181,7 @@
             this.checkBox.Checked = true;
             this.checkBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox.Location = new System.Drawing.Point(34, 204);
+            this.checkBox.Location = new System.Drawing.Point(34, 179);
             this.checkBox.Name = "checkBox";
             this.checkBox.Size = new System.Drawing.Size(280, 24);
             this.checkBox.TabIndex = 9;
@@ -206,7 +192,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 172);
+            this.label3.Location = new System.Drawing.Point(6, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(233, 20);
             this.label3.TabIndex = 7;
@@ -221,7 +207,7 @@
             "Mittel",
             "Niedrig",
             "Angehalten"});
-            this.speedPicker.Location = new System.Drawing.Point(241, 171);
+            this.speedPicker.Location = new System.Drawing.Point(241, 147);
             this.speedPicker.Name = "speedPicker";
             this.speedPicker.Size = new System.Drawing.Size(94, 21);
             this.speedPicker.TabIndex = 7;
@@ -252,19 +238,19 @@
             series1.IsXValueIndexed = true;
             series1.Name = "CPU";
             this.chart.Series.Add(series1);
-            this.chart.Size = new System.Drawing.Size(329, 150);
+            this.chart.Size = new System.Drawing.Size(329, 124);
             this.chart.TabIndex = 0;
             this.chart.Text = "CPU Auslastung";
             // 
             // receivedBox
             // 
             this.receivedBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.receivedBox.Location = new System.Drawing.Point(12, 279);
+            this.receivedBox.Location = new System.Drawing.Point(12, 254);
             this.receivedBox.Multiline = true;
             this.receivedBox.Name = "receivedBox";
             this.receivedBox.ReadOnly = true;
             this.receivedBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.receivedBox.Size = new System.Drawing.Size(260, 130);
+            this.receivedBox.Size = new System.Drawing.Size(260, 155);
             this.receivedBox.TabIndex = 7;
             // 
             // performanceCounter
@@ -276,12 +262,12 @@
             // sendBox
             // 
             this.sendBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.sendBox.Location = new System.Drawing.Point(279, 279);
+            this.sendBox.Location = new System.Drawing.Point(279, 254);
             this.sendBox.Multiline = true;
             this.sendBox.Name = "sendBox";
             this.sendBox.ReadOnly = true;
             this.sendBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.sendBox.Size = new System.Drawing.Size(341, 130);
+            this.sendBox.Size = new System.Drawing.Size(341, 155);
             this.sendBox.TabIndex = 8;
             // 
             // inputBox
@@ -299,7 +285,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 254);
+            this.label4.Location = new System.Drawing.Point(8, 231);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 20);
             this.label4.TabIndex = 10;
@@ -309,7 +295,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(275, 256);
+            this.label5.Location = new System.Drawing.Point(275, 231);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 11;
@@ -342,6 +328,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "CpuMonitor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CPU Monitor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CPU_Monitor_FormClosing);
             this.Load += new System.EventHandler(this.CPU_Monitor_Load);
@@ -366,7 +353,6 @@
         private System.IO.Ports.SerialPort serialPort;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.GroupBox uartBox;
-        private System.Windows.Forms.Button managerButton;
         private System.Windows.Forms.Button disconnectButton;
         private System.Windows.Forms.GroupBox cpuBox;
         private System.Windows.Forms.TextBox receivedBox;
